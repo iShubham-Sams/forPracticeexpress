@@ -7,6 +7,10 @@
     <title><%=title%></title>
 </head>
 <body>
-    <h1>this is login</h1>
+    <form action="/user/creat/session" method="post">
+    <input type="email" name="email" placeholder="Enter email or id">
+    <input type="password" name="password" placeholder="Enter Your password">
+    <input type="submit" value="Log In">
+    </form>
 </body>
 </html>

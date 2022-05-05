@@ -8,6 +8,8 @@ routes.get('/profile',userContr.profile);
 routes.get('/singup',userContr.singup);
 routes.get('/login',userContr.login)
 
+routes.post('/creat',userContr.create);
+
 
 
 
