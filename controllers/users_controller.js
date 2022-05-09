@@ -9,6 +9,9 @@ module.exports.profile=function(req,res){
 // for rendring singup form
 
 module.exports.singup=function(req,res){
+    if(req.isAuthenticated()){
+        return res.redirect('/user/profile')
+    }
     return res.render('singup',{
         title:"signup-form"
     })
@@ -18,6 +21,10 @@ module.exports.singup=function(req,res){
 
 
 module.exports.login=function(req,res){
+
+    if(req.isAuthenticated()){
+        return res.redirect('/user/profile')
+    }
     return res.render('login',{
         title:"login-form"
     })
@@ -36,12 +43,12 @@ module.exports.create=function(req,res){
             return res.redirect('/user/login');
         })
     }else{
-        return res.redirect('back')}
+        return res.redirect('/user/profile')}
     }
 )
 }
 
 // sign in and creat a session
 module.exports.createSession=function(req,res){
-    // todo later
+    return res.redirect('/user/profile')
 }
